@@ -33797,11 +33797,11 @@ var _chat = __webpack_require__(86);
 
 var _chat2 = _interopRequireDefault(_chat);
 
-var _rooms = __webpack_require__(169);
+var _rooms = __webpack_require__(170);
 
 var _rooms2 = _interopRequireDefault(_rooms);
 
-var _roomsCreate = __webpack_require__(184);
+var _roomsCreate = __webpack_require__(186);
 
 var _roomsCreate2 = _interopRequireDefault(_roomsCreate);
 
@@ -36569,7 +36569,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _vue2.default.use(_vuefire2.default);
 
 exports.default = {
-    template: '\n                <style type="text/css" scoped>\n                    .chat {\n                        padding: 0;\n                    }\n                    .chat li {\n                        margin-bottom: 10px;\n                        padding-bottom: 10px;\n                    }\n                    .chat li.left .chat-body {\n                        margin-left: 100px;\n                    }\n                    .chat li.right .chat-body {\n                        text-align: right;\n                        margin-right: 100px;\n                    }\n                    .panel-body {\n                        overflow-y: scroll;\n                        height: 400px;\n                    }\n                </style>\n                <div class="panel panel-primary">\n                    <div class="panel-heading">Chat</div>\n                    <div class="panel-body">\n                        <ul class="chat list-unstyled">\n                            <li class="clearfix"\n                                v-bind:class="{left: !isUser(o.email), right: isUser(o.email)}" v-for="o in messages">\n                                <span v-bind:class="{\'pull-left\': !isUser(o.email), \'pull-right\': isUser(o.email)}">\n                                    <img v-bind:src="o.photo" class="img-circle"/>\n                                </span>\n                                <div class="chat-body">\n                                    <strong>{{o.name}}</strong>\n                                    <p>{{o.text}}</p>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                    <div class="panel-footer">\n                        <div class="input-group">\n                            <input type="text" class="form-control input-md" \n                                    placeholder="Digite sua mensagem" v-model="message" @keyup.enter="sendMessage"/>\n                            <span class="input-group-btn">\n                                <button class="btn btn-success btn-md" @click="sendMessage">Enviar</button>\n                            </span>\n                        </div>\n                    </div>\n                </div>\n        ',
+    template: __webpack_require__(169),
     created: function created() {
         var roomRef = 'chat/rooms/' + this.$route.params.room;
         this.$bindAsArray('messages', _firebaseDb2.default.ref(roomRef + '/messages'));
@@ -48725,6 +48725,12 @@ function stop(id) {
 
 /***/ }),
 /* 169 */
+/***/ (function(module, exports) {
+
+module.exports = " <style type=\"text/css\" scoped>\r\n    .chat {\r\n        padding: 0;\r\n    }\r\n    .chat li {\r\n        margin-bottom: 10px;\r\n        padding-bottom: 10px;\r\n    }\r\n    .chat li.left .chat-body {\r\n        margin-left: 100px;\r\n    }\r\n    .chat li.right .chat-body {\r\n        text-align: right;\r\n        margin-right: 100px;\r\n    }\r\n    .panel-body {\r\n        overflow-y: scroll;\r\n        height: 400px;\r\n    }\r\n</style>\r\n<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">Chat</div>\r\n    <div class=\"panel-body\">\r\n        <ul class=\"chat list-unstyled\">\r\n            <li class=\"clearfix\"\r\nv-bind:class=\"{left: !isUser(o.email), right: isUser(o.email)}\" v-for=\"o in messages\">\r\n<span v-bind:class=\"{'pull-left': !isUser(o.email), 'pull-right': isUser(o.email)}\">\r\n    <img v-bind:src=\"o.photo\" class=\"img-circle\"/>\r\n</span>\r\n<div class=\"chat-body\">\r\n    <strong>{{o.name}}</strong>\r\n    <p>{{o.text}}</p>\r\n</div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"panel-footer\">\r\n        <div class=\"input-group\">\r\n            <input type=\"text\" class=\"form-control input-md\" \r\n    placeholder=\"Digite sua mensagem\" v-model=\"message\" @keyup.enter=\"sendMessage\"/>\r\n            <span class=\"input-group-btn\">\r\n<button class=\"btn btn-success btn-md\" @click=\"sendMessage\">Enviar</button>\r\n            </span>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48734,7 +48740,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _blueimpMd = __webpack_require__(170);
+var _blueimpMd = __webpack_require__(171);
 
 var _blueimpMd2 = _interopRequireDefault(_blueimpMd);
 
@@ -48750,14 +48756,14 @@ var _firebaseDb = __webpack_require__(32);
 
 var _firebaseDb2 = _interopRequireDefault(_firebaseDb);
 
-__webpack_require__(171);
+__webpack_require__(172);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vuefire2.default);
 
 exports.default = {
-    template: '\n     <div class="col-md-4" v-for="o in rooms">\n        <div class="panel panel-primary">\n            <div class="panel-heading">\n                {{ o.name }}\n            </div>\n            <div class="panel-body">\n                {{o.description}}\n                <br/>\n                <a href="javascript:void(0)" @click="openModal(o)">Entrar</a>\n            </div>\n        </div> \n    </div>\n    <div class="modal fade" id="modalLoginEmail" tabindex="-1" role="dialog" aria-labelledby="modalLoginEmail">\n      <div class="modal-dialog" role="document">\n        <div class="modal-content">\n          <div class="modal-header">\n            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\n            <h4 class="modal-title" id="exampleModalLabel">Entre com as informa\xE7\xF5es</h4>\n          </div>\n          <div class="modal-body">\n            <form>\n              <div class="form-group">\n                <input type="text" class="form-control" name="email" v-model="email" placeholder="E-mail">\n              </div>\n              <div class="form-group">\n                <input type="text" class="form-control" name="name" v-model="name" placeholder="Nome">\n              </div>\n            </form>\n          </div>\n          <div class="modal-footer">\n            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>\n            <button type="button" class="btn btn-primary" @click="login">Login</button>\n          </div>\n        </div>\n      </div>\n    </div>\n    ',
+    template: __webpack_require__(185),
     firebase: {
         rooms: _firebaseDb2.default.ref('chat/rooms')
     },
@@ -48786,7 +48792,7 @@ exports.default = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -49072,11 +49078,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // This file is autogenerated via the `commonjs` Grunt task. You can require() this file in a CommonJS environment.
-__webpack_require__(172)
 __webpack_require__(173)
 __webpack_require__(174)
 __webpack_require__(175)
@@ -49088,9 +49093,10 @@ __webpack_require__(180)
 __webpack_require__(181)
 __webpack_require__(182)
 __webpack_require__(183)
+__webpack_require__(184)
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -49156,7 +49162,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -49257,7 +49263,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -49389,7 +49395,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -49633,7 +49639,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -49852,7 +49858,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -50024,7 +50030,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -50370,7 +50376,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -50897,7 +50903,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -51012,7 +51018,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -51191,7 +51197,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -51353,7 +51359,7 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
@@ -51522,7 +51528,13 @@ __webpack_require__(183)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 184 */
+/* 185 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-4\" v-for=\"o in rooms\">\r\n        <div class=\"panel panel-primary\">\r\n            <div class=\"panel-heading\">\r\n                {{ o.name }}\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                {{o.description}}\r\n                <br/>\r\n                <a href=\"javascript:void(0)\" @click=\"openModal(o)\">Entrar</a>\r\n            </div>\r\n        </div> \r\n    </div>\r\n    <div class=\"modal fade\" id=\"modalLoginEmail\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"modalLoginEmail\">\r\n      <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n          <div class=\"modal-header\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\r\n            <h4 class=\"modal-title\" id=\"exampleModalLabel\">Entre com as informações</h4>\r\n          </div>\r\n          <div class=\"modal-body\">\r\n            <form>\r\n              <div class=\"form-group\">\r\n                <input type=\"text\" class=\"form-control\" name=\"email\" v-model=\"email\" placeholder=\"E-mail\">\r\n              </div>\r\n              <div class=\"form-group\">\r\n                <input type=\"text\" class=\"form-control\" name=\"name\" v-model=\"name\" placeholder=\"Nome\">\r\n              </div>\r\n            </form>\r\n          </div>\r\n          <div class=\"modal-footer\">\r\n            <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Fechar</button>\r\n            <button type=\"button\" class=\"btn btn-primary\" @click=\"login\">Login</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>";
+
+/***/ }),
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51551,7 +51563,7 @@ _vue2.default.use(_vuefire2.default);
 var rooms = [{ id: "001", name: "PHP", description: "Entusiasta do PHP" }, { id: "002", name: "Java", description: "Developer experts" }, { id: "003", name: "C#", description: "Os caras do C#" }, { id: "004", name: "C++", description: "Fissurados por programação" }, { id: "005", name: "Javascript", description: "Olha a web aí!" }, { id: "006", name: "Vue.js", description: "Chat dos caras do data-binding" }];
 
 exports.default = {
-    template: '\n     <ul>\n\t\t<li v-for="o in rooms">\n\t\t    {{o.name}} \n\t\t</li>\n    </ul>\n    ',
+    template: __webpack_require__(187),
     firebase: {
         rooms: _firebaseDb2.default.ref('chat/rooms')
     },
@@ -51566,6 +51578,12 @@ exports.default = {
         });
     }
 };
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports) {
+
+module.exports = "<ul>\r\n\t<li v-for=\"o in rooms\">\r\n\t\t{{o.name}} \r\n\t</li>\r\n</ul>";
 
 /***/ })
 /******/ ]);

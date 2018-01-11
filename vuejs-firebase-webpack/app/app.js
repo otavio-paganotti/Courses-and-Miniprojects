@@ -4,6 +4,7 @@ import ChatComponent from './chat.component';
 import RoomsComponent from './rooms.component';
 import RoomsCreateComponent from './rooms-create.component';
 
+
 Vue.use(VueRouter);
 
 var appComponent = Vue.extend({});
