@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/css/font-awesome.css">
+    </head>
+    <body>
+        <div id="app">
+            <div>{{filteredAndSortedData}}</div>
+            <div>
+                <input type="text" v-model="filterValue" placeholder="Filter">
+                <button @click="invertSort()">Sort asc/desc</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="node_modules/vue-resource/dist/vue-resource.js"></script>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        testData: [{name:'foo'}, {name:'bar'}, {name:'foobar'}, {name:'test'}],
+                        filterValue: '',
+                        sortAsc: true
+                    };
+                },
+                computed: {
+                    filteredAndSortedData() {
+                        // Apply filter first
+                        let result = this.testData;
+                        if (this.filterValue) {
+                            result = result.filter(item => item.name.includes(this.filterValue));
+                        }
+                        // Sort the remaining values
+                        let ascDesc = this.sortAsc ? 1 : -1;
+                        return result.sort((a, b) => ascDesc * a.name.localeCompare(b.name));
+                    }
+                },
+                methods: {
+                    invertSort() {
+                        this.sortAsc = !this.sortAsc;
+                    }
+                }
+            });
+        </script>    
+    </body>
+</html>

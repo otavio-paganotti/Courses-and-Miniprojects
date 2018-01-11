@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>My Books</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/css/font-awesome.css">
+</head>
+<body>
+	<div class="container" id="hello">
+		<div class="row">
+			<h1>{{ msg }}</h1>
+			<input type="text" class="form-control" v-model="msg">
+		</div>
+		<div class="row">
+			<h1>My List</h1>
+			<ul>
+				<li v-for="people in peoples">
+					{{people.name}}
+				</li>
+			</ul>
+		</div>
+		<div class="row">
+			<h1>My List Elements</h1>
+			<input type="text" class="form-control" v-model="newElement" v-on:keyup.enter="addElement">
+			<ul>
+				<li v-for="element in elements">
+					{{element.title}}
+					<a href="#" v-on:click="removeElement($event,$index)">X</a>
+				</li>
+			</ul>
+		</div>
+		<div class="row">
+			<h1>v-on</h1>
+			<button v-on:click="myClick">Click</button>
+			<button @click="myClick">@Click</button>
+			<input type="text" @keyup="myKeyUp" placeholder="myKeyUp">
+			<input type="text" @keyup.enter="myKeyUp" placeholder="myKeyUp.enter">
+		</div> 
+		<div class="row">
+			<h1>v-bind</h1>
+			<p v-bind:class="{'text-danger':1 === 1}">text</p>
+			<p :class="{'text-danger':1 === 1}">:text</p>
+			<p :style="{fontSize:30 + 'px'}">Style</p>
+			<p :style="{'font-size':30 + 'px'}">Style</p>
+			<p :style="[objectA,objectB]">Object A and B</p>
+			
+		</div>
+		<div class="row">
+			<h1>v-model</h1>
+			<ul>
+				<li v-for="myList in myListForm">
+					{{ myList.name }} - {{ myList.email }}
+				</li>
+			</ul>
+			<input type="text" v-model="myForm.name" placeholder="Name">
+			<input type="text" v-model="myForm.email" placeholder="Email">
+			<button @click="addForm">Add</button>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+	<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="node_modules/vue-resource/dist/vue-resource.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

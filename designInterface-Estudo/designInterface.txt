@@ -1,0 +1,23 @@
+Briefing
+
+1-Qual o nome da empresa?
+2-Qual o segmento da empresa?
+3-Qual o público alvo da empresa?
+4-O projeto se refere a (1)site, (2) sistema, ou (3) aplicativo? Ou todos?
+5-A empresa possui Marca ou Manual de Identidade Visual?
+6-Qual o objetivo do projeto?
+7-Quais são os 3 principais concorrentes da empresa?
+8-Quais são as 3 referências de sites modeli?
+9-Qual o prazo de lançamento do produto?
+10-Vamos fazer um contrato, ok?
+
+Arquitetura de informação: Competências
+
+1-Facilitar a compreensão da Informação
+2-Estruturar o Conteúdo
+3-Definir a navegação entre as seções do projeto
+4-Definir a interação com o conteúdo
+5-Definir seções de conteúdo
+6-Trabalhar alinhado com a equipe de UX
+7-Ter noção de Design e UX
+
