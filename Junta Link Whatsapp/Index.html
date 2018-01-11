@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Dourasoft - Gerador de Link</title>
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<link href="Css/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body class="off">
+
+
+	<div class="div-block-2">
+		<div class="centerede">	
+			<br>
+			<h3>Instrução: </h3>
+			<h5>Digite o número do telefone desejado.</h5>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Não se preocupe com parênteses, traços e espaços.</p>
+			<h5>Digite a mensagem que deseja enviar para o número informado.</h5>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Não é possível quebrar linha.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Não é possível enviar foto.</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Não é possível enviar emoji.</p>
+			<br>
+			<div class="w-form">
+				<form action="#" class="form" data-name="Email Form" id="email-form" name="email-form">
+					<div class="form-n">
+						<label class="" for="phone">Número do Celular:</label>
+						<input autofocus="autofocus" class="phone w-input" data-name="phone" id="phone" maxlength="256" name="phone" placeholder="+55 (99) 99999-9999" required="required" type="text">
+								
+						<br>
+
+						<label class="" for="txt">Mensagem (opcional):</label>
+						<input class="txt w-input" data-name="txt" id="txt" maxlength="256" name="txt" placeholder="Escreva o texto" type="text">
+					</div>	
+			
+					<div class="show">
+						<label class="ready-text" for="Field-2">Clique para copiar:</label>
+						<input class="text-inpute w-input" data-name="Field" id="Field-2" maxlength="256" name="Field" type="text">
+					</div>
+					<input class="btn-b w-button" data-wait="Aguarde..." type="submit" value="Gerar Link">
+				</form>
+			</div> 
+		</div>
+	</div>
+
+
+
+	<script src="Js/jquery.min.js" type="text/javascript"></script>
+	<script src="Js/webflow.js" type="text/javascript"></script>
+
+	<script>
+	$(function(){
+		$('.menu-mob').click(function(e){
+	      e.preventDefault();
+	      $('.link-menu').css('display','block');
+	      $(this).hide();
+	  	});
+	});
+	</script>
+
+
+
+	<script>
+	$(function() {
+
+		$('.form').submit(function(e){
+			e.preventDefault();
+
+			var phone = $('.phone').val();
+			var phoneC = phone.replace(/\ /g, '').replace(/\(/g, '').replace(/\)/g, '').replace(/\+/g, '').replace(/\-/g, '');
+			var txt = $('.txt').val();
+			var txtC = txt.replace(/\ /g, '%20');
+			var api = 'https://api.whatsapp.com/send?phone=' + phoneC + '&text=' + txtC;
+
+			$('.btn-b').val('Gerar Outro Link').click(function(){
+				location.reload();
+			});
+
+			$('.form-n').slideUp(function(){
+				$('.show').slideDown();
+			});
+
+			$('.text-inpute').val(api);
+
+			$(".text-inpute").on("click", function () {
+			   $(this).select();
+			   document.execCommand("copy");
+			   $('.ready-text').text('Link copiado!').css('color','#00a006');
+			});
+
+		});
+	});
+	</script>
+
+	</body>
+</html>
