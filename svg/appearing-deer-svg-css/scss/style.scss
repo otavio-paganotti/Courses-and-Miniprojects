@@ -1,0 +1,52 @@
+@import 'compass/reset';
+
+@mixin createRandomFades(){
+	$element: '';
+	$color: '';
+	@for $i from 0 through 68 {
+		&:nth-child(#{$i}){
+			animation: fade-animation 3s ease forwards random(200) * 0.01 + s;
+		}
+	}
+}
+
+html{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#194a4d+1,669952+100 */
+	background: rgb(25,74,77); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(25,74,77,1) 1%, rgba(102,153,82,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(1%,rgba(25,74,77,1)), color-stop(100%,rgba(102,153,82,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(25,74,77,1) 1%,rgba(102,153,82,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(25,74,77,1) 1%,rgba(102,153,82,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(25,74,77,1) 1%,rgba(102,153,82,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(25,74,77,1) 1%,rgba(102,153,82,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#194a4d', endColorstr='#669952',GradientType=1 ); /* IE6-9 */
+}
+
+svg{
+	width: 100%;
+  height: 500px;
+}
+
+.fil0 {fill:#C3936B}
+.fil1 {fill:#AB7345}
+.fil2 {fill:#D7AF91}
+.fil3 {fill:#5B5B5B}
+.fil4 {fill:#727271}
+.fil5 {fill:#ECD1BF}
+.fil6 {fill:#955B27}
+.fil7 {fill:#834B1A}
+.fil8 {fill:#5C3110}
+.fil9 {fill:#D2CC9D}
+.fil10 {fill:#E8E2AC}
+.fil11 {fill:#F6EFC8}
+
+polygon{
+	opacity: 0;
+	@include createRandomFades();
+}
+
+@keyframes fade-animation{
+	0%   {opacity: 0}
+	100% {opacity: 1}
+}
+

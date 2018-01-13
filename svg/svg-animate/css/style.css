@@ -1,0 +1,9 @@
+body {
+  background: rgba(13,139,135,0.5);
+}
+
+svg {
+  display: block;
+  margin: 0 auto;  
+  padding-top: 10px;
+}

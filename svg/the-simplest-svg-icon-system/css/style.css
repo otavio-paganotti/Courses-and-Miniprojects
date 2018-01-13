@@ -1,0 +1,25 @@
+body {
+  padding-top: calc(50vh - 10vw);
+  text-align: center;
+}
+
+.u-icon {
+  width: 20vw;
+  height: 20vw;
+  fill: #90A4AE;
+}
+
+.u-icon--user {
+  margin-right: -2vw;
+}
+
+.u-icon--heart {
+  fill: #EF5350;
+  animation: pulse 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+  }
+}

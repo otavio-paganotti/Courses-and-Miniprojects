@@ -1,0 +1,223 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+.cont {
+  position: relative;
+  height: 100%;
+  background: #F4F4F6;
+  overflow: auto;
+}
+
+.demo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20rem;
+  margin-top: -32rem;
+  width: 40rem;
+  height: 64rem;
+  background: #8B90B1;
+  overflow: hidden;
+}
+.demo__head {
+  position: relative;
+  height: 10rem;
+  background: #C0C4D7;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.demo__head:before, .demo__head:after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #fff;
+  border-left: none;
+  border-top: none;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.demo__head:before {
+  left: 7rem;
+}
+.demo__head:after {
+  right: 7rem;
+}
+.demo__pull-down {
+  line-height: 10rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+.demo__body {
+  position: relative;
+  height: 54rem;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.demo__body.withTransition {
+  -webkit-transition: -webkit-transform 0.45s;
+  transition: -webkit-transform 0.45s;
+  transition: transform 0.45s;
+  transition: transform 0.45s, -webkit-transform 0.45s;
+}
+.demo__svg {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.demo__ball-cont {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12rem;
+  height: 1rem;
+  margin-left: -6rem;
+  background: #fff;
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+}
+.demo__ball {
+  position: absolute;
+  top: 9rem;
+  left: 50%;
+  margin-left: -3.5rem;
+  z-index: 1;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+.demo__ball.jump {
+  -webkit-transform: translateY(-20rem);
+          transform: translateY(-20rem);
+}
+.demo__progress {
+  position: absolute;
+  top: 13.5rem;
+  left: 50%;
+  margin-left: -4rem;
+  width: 8rem;
+  height: 8rem;
+}
+.demo__progress.animate {
+  -webkit-transition: opacity 0.3s 2s, -webkit-transform 0.3s 2s;
+  transition: opacity 0.3s 2s, -webkit-transform 0.3s 2s;
+  transition: transform 0.3s 2s, opacity 0.3s 2s;
+  transition: transform 0.3s 2s, opacity 0.3s 2s, -webkit-transform 0.3s 2s;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  opacity: 0;
+}
+.demo__progress.animate path {
+  -webkit-animation: animatePath 2s forwards;
+          animation: animatePath 2s forwards;
+}
+.demo__progress path {
+  stroke-dasharray: 251.36276245117188;
+  stroke-dashoffset: 251.36276245117188;
+}
+.demo__content {
+  z-index: 3;
+  position: relative;
+  height: 100%;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.demo__content.hidden {
+  opacity: 0;
+}
+.demo__el {
+  position: relative;
+  height: 9rem;
+  border-bottom: 1px solid #EAEAEA;
+  padding: 1.5rem;
+}
+.demo__el:last-child {
+  border-bottom: 0;
+}
+.demo__el-img {
+  display: inline-block;
+  width: 6rem;
+  height: 6rem;
+  margin-right: 1.5rem;
+  border-radius: 1rem;
+  background: #C0C4D7;
+}
+.demo__el-text {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 9rem;
+  height: 1.2rem;
+  border-radius: 0.5rem;
+  background: #C0C4D7;
+}
+.demo__el-text:before, .demo__el-text:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 0.9rem;
+  background: #C0C4D7;
+  border-radius: 0.5rem;
+}
+.demo__el-text:before {
+  top: 2.5rem;
+  width: 19rem;
+}
+.demo__el-text:after {
+  top: 4.9rem;
+  width: 24rem;
+}
+
+.check-out {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+@-webkit-keyframes animatePath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animatePath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

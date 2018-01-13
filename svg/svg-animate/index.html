@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>SVG · animate</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="265" height="271" viewBox="0 0 265 271" aria-labelledby="title desc">
+            <title id="title">Logo de Jorge Aznar</title>
+            <desc id="desc">Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG, Responsive Web Design y Mobile-First.</desc>
+
+            <g id="turn">
+                <rect id="rect"  x="44.3" y="51.5" transform="rotate(45 130.45 137.65)" fill="#fff" width="172.3" height="172.3">
+                    <animate attributeName="fill" dur="2s" from="#fff" to="#000" begin="first-rotate.end+1s;rect.mouseover+1s" fill="freeze"/>
+                    <animate attributeName="fill" dur=".5s" from="#000" to="#F39C12" begin="first-rotate.end+3s;rect.mouseover+3s" fill="freeze"/>
+                    <animateTransform attributeName="transform" type="rotate" from="0 130.45 137.65" to="360 130.45 137.65" begin="rect.mouseover" dur="1s" calcMode="linear"/>
+                    <animateTransform id="first-rotate" attributeName="transform" type="rotate" values="45 130.45 137.65; 0 130.45 137.65; 90 130.45 137.65; 45 130.45 137.65; 90 130.45 137.65; 45 130.45 137.65" begin="1.5s" dur="3s" calcMode="linear"/>
+                </rect>
+                <rect x="44.3" y="51.5" transform="rotate(45 130.45 137.65)" fill="none" stroke="#000" stroke-width="4" width="172.3" height="172.3">
+                    <animate attributeName="stroke" dur="0.1s" from="#fff" to="#000" begin="first-rotate.end+1s;rect.mouseover+1s" fill="freeze"/>
+                    <animate attributeName="stroke" dur=".5s" from="#000" to="#fff" begin="first-rotate.end+3s;rect.mouseover+3s" fill="freeze"/>
+                    <animateTransform attributeName="transform" type="rotate" from="45 130.45 137.65; 0 130.45 137.65" to="360 130.45 137.65" begin="rect.mouseover" dur="2s" calcMode="linear"/>
+                    <animateTransform attributeName="transform" type="rotate" values="0 130.45 137.65; 90 130.45 137.65; 45 130.45 137.65; 90 130.45 137.65; 45 130.45 137.65" begin="1.5s" dur="3s" calcMode="linear"/>
+                </rect>
+                <polygon fill="#000" points="60.6,120.7 101.9,86.9 124.6,149.1 134.5,178.4 91,178.4">
+                    <animate attributeName="fill" dur="0.1s" from="#000" to="#fff" begin="first-rotate.end+1s;rect.mouseover+1s" fill="freeze"/>
+                    <animate attributeName="fill" dur=".5s" from="#fff" to="#C0392B" begin="first-rotate.end+3s;rect.mouseover+3s" fill="freeze"/>
+
+                    <animate attributeName="points"
+                    values="60.6,120.7 101.9,86.9 124.6,149.1 134.5,178.4 91,178.4;
+                            6.3,137 101.9,86.9 124.6,149.1 134.5,178.4 91,178.4;
+                            6.3,137 130,19 124.6,149.1 134.5,178.4 91,178.4;
+                            6.3,137 130,19 254.6,137 134.5,178.4 91,178.4;
+                            6.3,137 130,19 254.6,137 134.5,137 91,137;
+                            130,19 130,19 130,19 130,19 130,19;
+                            60.6,120.7 101.9,86.9 124.6,149.1 134.5,178.4 91,178.4"
+                    begin="first-rotate.end+5s;rect.mouseover+5s" dur="2s" fill="freeze"/>
+
+
+                </polygon>
+                <polygon fill="#000" points="136.7,70.5 195.2,105.1 150.6,178.4 102.9,178.4">
+                    <animate attributeName="fill" dur="0.1s" from="#000" to="#fff" begin="first-rotate.end+1s;rect.mouseover+1s" fill="freeze"/>
+                    <animate attributeName="fill" dur=".5s" from="#fff" to="#16A085" begin="first-rotate.end+3s;rect.mouseover+3s" fill="freeze"/>
+
+                    <animate attributeName="points"
+                    values="136.7,70.5 195.2,105.1 150.6,178.4 102.9,178.4;
+                            6.3,137 195.2,105.1 150.6,178.4 102.9,178.4;
+                            6.3,137 254.6,137 150.6,178.4 102.9,178.4;
+                            6.3,137 254.6,137 130.6,258.4 130.6,258.4;
+                            130.6,258.4 130.6,258.4 130.6,258.4 130.6,258.4;
+                            136.7,70.5 195.2,105.1 150.6,178.4 102.9,178.4"
+                    begin="first-rotate.end+5s;rect.mouseover+5s" dur="2s" fill="freeze" />
+                </polygon>
+                <line fill="none" stroke="#000" x1="68.3" y1="178.4" x2="188.7" y2="178.4">
+                    <animate attributeName="stroke" dur="0.1s" from="#000" to="#fff" begin="first-rotate.end+1s;rect.mouseover+1s" fill="freeze"/>
+                </line>
+            </g>
+        </svg>
+  
+  
+
+</body>
+
+</html>

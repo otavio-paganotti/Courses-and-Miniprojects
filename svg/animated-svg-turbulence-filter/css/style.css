@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(-35deg, #2aa4d5, #030633);
+  min-height: 100vh;
+}
+
+div {
+  width: 370px;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 0 0 150px #031f40;
+  margin: 1em auto;
+  margin: calc(50vh - 250px) auto;
+}
+
+svg {
+  background: #031f40;
+  position: relative;
+  left: -20px;
+}

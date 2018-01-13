@@ -1,0 +1,99 @@
+body {
+  background: #fffed7;
+  overflow: hidden;
+}
+.svg-container {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  cursor: pointer;
+}
+svg {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+}
+svg * {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+svg #green_blue_demi_circle {
+  -webkit-transform-origin: 31% 97%;
+          transform-origin: 31% 97%;
+}
+.animated * {
+  -webkit-transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.animated #mint_triangle {
+  -webkit-transform: rotate(56deg);
+          transform: rotate(56deg);
+}
+.animated #red_rectangle {
+  -webkit-transform: scale(0) translateX(-100%);
+          transform: scale(0) translateX(-100%);
+}
+.animated #pale_pink {
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+.animated #pale_yellow_rectangle {
+  -webkit-transform: translate(-30px, 50px);
+          transform: translate(-30px, 50px);
+}
+.animated #yellow_top {
+  -webkit-transform: translate(-30px, 50px);
+          transform: translate(-30px, 50px);
+}
+.animated #pink_triangle {
+  -webkit-transform: translateX(250%);
+          transform: translateX(250%);
+}
+.animated #purple_rectangle {
+  -webkit-transform: translateX(160%);
+          transform: translateX(160%);
+}
+.animated #green_big {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.animated rect {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.animated #purple_coude {
+  -webkit-transform: translate(50px, 50px);
+          transform: translate(50px, 50px);
+}
+.animated #orange_line {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.animated #dark_yellow_demi_wheel,
+.animated #yellow_demi_wheel {
+  -webkit-transform: translateX(86%) rotate(62deg);
+          transform: translateX(86%) rotate(62deg);
+}
+.animated #purple_wheel,
+.animated #green_blue_demi_circle {
+  -webkit-transform: translateX(-80%) rotate(242deg);
+          transform: translateX(-80%) rotate(242deg);
+}
+.animated #green_demi_circle,
+.animated #saumon_demi_circle {
+  -webkit-transform: translate(-330%, -30%);
+          transform: translate(-330%, -30%);
+}
+.animated #purple_circle {
+  -webkit-transform: translate(57%, 55%) rotate(246deg);
+          transform: translate(57%, 55%) rotate(246deg);
+}

@@ -1,0 +1,80 @@
+move = all 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940)
+
+body
+	background #FFFED7
+	overflow: hidden
+	
+.svg-container
+	height 500px
+	width 500px
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	overflow hidden
+	cursor pointer
+	
+svg 
+	height 100%
+	width 100%
+	margin 0 auto
+	display block
+	overflow hidden
+	
+	*
+		transform-origin top
+		transition move
+	#green_blue_demi_circle
+		transform-origin 31% 97%
+	
+.animated
+	*
+		transition move
+	#mint_triangle
+		transform rotate(56deg)
+		
+	#red_rectangle
+		transform scale(0) translateX(-100%)
+		
+	#pale_pink
+		transform translateX(120%)
+		
+	#pale_yellow_rectangle
+		transform translate(-30px, 50px)
+		
+	#yellow_top
+		transform translate(-30px, 50px)
+	
+	#pink_triangle
+		transform translateX(250%)
+	
+	#purple_rectangle
+		transform translateX(160%)
+		
+	#green_big
+		transform translateX(100%)
+		
+	rect
+		transform translateX(-100%)
+		
+	#purple_coude
+		transform translate(50px, 50px)
+		
+	#orange_line
+		transform translateX(100%)
+	
+	#dark_yellow_demi_wheel, #yellow_demi_wheel
+		transform translateX(86%) rotate(62deg)
+		
+	#purple_wheel, #green_blue_demi_circle
+		transform translateX(-80%) rotate(242deg)
+		
+	#green_demi_circle, #saumon_demi_circle
+		transform translate(-330%, -30%)
+	
+	#purple_circle
+		transform translate(57%, 55%) rotate(246deg)
+		
+		
+		
+	

@@ -1,0 +1,33 @@
+h1, h2, h3, h4, h5, h6, a.button {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  -moz-transition: width 0.3s ease-out;
+  -o-transition: width 0.3s ease-out;
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+}
+.wrapper > h1, .wrapper > p {
+  color: #333333;
+}
+.wrapper .container {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.wrapper .container > svg {
+  position: absolute;
+  display: block;
+}
+.wrapper .container > svg path {
+  stroke: #d6940b;
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 1px, 15px;
+  fill: #F4AF20;
+}
