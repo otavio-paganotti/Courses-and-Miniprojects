@@ -1,0 +1,216 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$strokeColor: #B8B8B8;
+$pinColor: #00CD73;
+$size: 120px;
+$totalAnim: 8s;
+$delay: 1s;
+$svgSize: 60;
+$squareLen: 240;
+$lineLen: $svgSize;
+$linesPerSide: 3;
+$bigCircleLen: 188.522;
+$smallCircleLen: 94.261;
+$outerLen: 201.391;
+
+.pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: $size/-2;
+  margin-top: $size/-2;
+  width: $size;
+  height: $size;
+  overflow: visible;
+  
+  &__group {
+    transform-origin: 30px 30px;
+    animation: group-anim $totalAnim $delay infinite;
+  }
+  
+  &__grayGroup {
+    animation: gray-anim $totalAnim $delay infinite;
+  }
+  
+  &__square {
+    stroke: $strokeColor;
+    stroke-dasharray: $squareLen, $squareLen;
+    stroke-dashoffset: $squareLen;
+    animation: square-anim $totalAnim $delay infinite;
+  }
+  
+  &__line {
+    stroke: $strokeColor;
+    stroke-dasharray: $lineLen, $lineLen;
+    stroke-dashoffset: $lineLen;
+    
+    @for $i from 1 through $linesPerSide {
+      &-#{$i} {
+        animation: line-anim $totalAnim ($totalAnim/-40 * ($linesPerSide - $i) + $delay) infinite;
+      }
+    }
+  }
+  
+  &__circleBig {
+    stroke: $strokeColor;
+    stroke-dasharray: $bigCircleLen, $bigCircleLen;
+    stroke-dashoffset: $bigCircleLen;
+    animation: bigCircle-anim $totalAnim $delay infinite;
+  }
+  
+  &__circleSmall {
+    stroke: $strokeColor;
+    stroke-dasharray: $smallCircleLen, $smallCircleLen;
+    stroke-dashoffset: $smallCircleLen;
+    animation: smallCircle-anim $totalAnim $delay infinite;
+  }
+  
+  &__outer {
+    stroke: $pinColor;
+    fill: transparent;
+    stroke-dasharray: $outerLen, $outerLen;
+    stroke-dashoffset: $outerLen;
+    animation: outer-anim $totalAnim $delay infinite;
+  }
+  
+  &__inner {
+    stroke: $pinColor;
+    fill: transparent;
+    stroke-dasharray: $smallCircleLen, $smallCircleLen;
+    stroke-dashoffset: $smallCircleLen;
+    animation: inner-anim $totalAnim $delay infinite;
+  }
+}
+
+@keyframes square-anim {
+  15% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim {
+  23% {
+    stroke-dashoffset: $lineLen;
+  }
+  30% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bigCircle-anim {
+  30% {
+    stroke-dashoffset: $bigCircleLen;
+  }
+  43% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes smallCircle-anim {
+  43% {
+    stroke-dashoffset: $smallCircleLen;
+  }
+  53% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes group-anim {
+  53% {
+    transform: rotate(0);
+  }
+  61% {
+    transform: rotate(45deg);
+  }
+  94% {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes outer-anim {
+  61% {
+    stroke-dashoffset: $outerLen;
+  }
+  71% {
+    stroke-dashoffset: 0;
+  }
+  79% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  94% {
+    stroke-dashoffset: 0;
+    fill: $pinColor;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: $pinColor;
+  }
+}
+
+@keyframes inner-anim {
+  71% {
+    stroke-dashoffset: $smallCircleLen;
+  }
+  79% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  94% {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+}
+
+@keyframes gray-anim {
+  53% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 0.2;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.other {
+  position: absolute;
+  left: 0;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: right;
+  
+  &__link {
+    font-size: 1.3rem;
+    margin: 0 1rem;
+  }
+}

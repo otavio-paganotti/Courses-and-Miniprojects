@@ -1,0 +1,163 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$strokeColor: #9E9E9E;
+$logoColor: #D41E48;
+$size: 140px;
+$totalAnim: 9s;
+$delay: 1s;
+$svgSize: 70;
+$squareLen: $svgSize * 4;
+$lineLen: $svgSize;
+$linesPerSide: 6;
+$strokeLen: 600;
+$fillLen: 290;
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: $size/-2;
+  margin-top: $size/-2;
+  width: $size;
+  height: $size;
+  overflow: visible;
+  
+  &__mainGroup {
+    transform-origin: 35px 35px;
+    animation: mainGroupAnim $totalAnim $delay infinite;
+  }
+  
+  &__grayGroup {
+    animation: grayGroupAnim $totalAnim $delay infinite;
+  }
+  
+  &__square {
+    stroke: $strokeColor;
+    stroke-dasharray: $squareLen, $squareLen;
+    stroke-dashoffset: $squareLen;
+    animation: square-anim $totalAnim $delay infinite;
+  }
+  
+  &__line {
+    stroke: $strokeColor;
+    stroke-dasharray: $lineLen, $lineLen;
+    stroke-dashoffset: $lineLen;
+    
+    @for $i from 1 through $linesPerSide {
+      &-#{$i} {
+        animation: line-anim $totalAnim ($totalAnim/-80 * ($linesPerSide - $i) + $delay) infinite;
+      }
+    }
+  }
+  
+  &__stroke {
+    stroke: $logoColor;
+    stroke-dasharray: $strokeLen, $strokeLen;
+    stroke-dashoffset: $strokeLen;
+    animation: strokeAnim $totalAnim $delay ease-in-out infinite;
+  }
+  
+  &__fill {
+    stroke: $logoColor;
+    stroke-dasharray: $fillLen, $fillLen;
+    stroke-dashoffset: $fillLen;
+    animation: fillAnim $totalAnim $delay infinite;
+  }
+}
+
+@keyframes square-anim {
+  12% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-anim {
+  19% {
+    stroke-dashoffset: $lineLen;
+  }
+  26% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mainGroupAnim {
+  26% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-45deg);
+  }
+  95% {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes grayGroupAnim {
+  33% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes strokeAnim {
+  33% {
+    stroke-dashoffset: $strokeLen;
+  }
+  66% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillAnim {
+  66% {
+    stroke-dashoffset: $fillLen;
+  }
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.other {
+  position: absolute;
+  left: 0;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: right;
+  
+  &__link {
+    font-size: 1.3rem;
+    margin: 0 1rem;
+  }
+}

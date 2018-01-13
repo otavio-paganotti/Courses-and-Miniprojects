@@ -1,0 +1,247 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#radios, #explanation {
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#radios {
+  padding: 15px;
+}
+
+#explanation {
+  top: 100px;
+  width: 200px;
+  padding: 0 15px;
+}
+
+#png, label[for='png'] {
+  margin-bottom: 15px;
+}
+
+label:after {
+  content: "";
+  display: block;
+}
+
+.icon {
+  float: left;
+  margin: 10px;
+  background-image: url("http://adrianosmond.com/images/sprite.png");
+  background-size: 96px 1344px;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.icon.vertically-centred {
+  margin-top: -16px;
+}
+
+.svg .icon {
+  background-image: url("http://adrianosmond.com/images/sprite.svg");
+}
+
+.home-icon {
+  background-position: -32px -96px;
+}
+
+.right-arrow {
+  background-position: 0px -640px;
+  right: 0;
+}
+
+.down-arrow {
+  background-position: 0px -672px;
+}
+
+.plus-icon {
+  background-position: 0px -704px;
+}
+
+.minus-icon {
+  background-position: 0px -736px;
+}
+
+.warning-icon {
+  background-position: 0px -832px;
+}
+
+.error-icon {
+  background-position: -32px -832px;
+}
+
+.capped-icon {
+  background-position: -64px -1312px;
+}
+
+.expand-collapse-icon {
+  background-position: -32px -704px;
+}
+
+.oyster-icon {
+  background-position: -64px -448px;
+}
+
+.oyster-tap-icon {
+  background-position: -64px -416px;
+}
+
+.contactless-icon {
+  background-position: -64px -384px;
+}
+
+.oyster-card-icon {
+  background-position: 0px -1280px;
+}
+
+.to-icon {
+  background-position: -32px -1280px;
+}
+
+.card-icon {
+  background-position: -64px -1248px;
+}
+
+.calendar-icon {
+  background-position: -64px -1280px;
+}
+
+.tick-icon {
+  background-position: -32px -192px;
+}
+
+.document-icon {
+  background-position: -64px -192px;
+}
+
+.spreadsheet-icon {
+  background-position: -64px -160px;
+}
+
+.bullet-icon {
+  background-position: 0px -1152px;
+}
+
+.form-tooltip-icon {
+  background-position: -64px -352px;
+}
+
+.crosshair-icon {
+  background-position: 0px 0px;
+}
+
+.tube-icon {
+  background-position: 0px -1056px;
+}
+
+.bus-icon {
+  background-position: 0px -320px;
+}
+
+.rail-icon {
+  background-position: 0px -352px;
+}
+
+.river-icon {
+  background-position: 0px -384px;
+}
+
+.dlr-icon {
+  background-position: 0px -416px;
+}
+
+.tram-icon {
+  background-position: 0px -448px;
+}
+
+.mail-icon {
+  background-position: -64px -1152px;
+}
+
+.phone-icon {
+  background-position: -64px -1216px;
+}
+
+.email-icon {
+  background-position: -64px -1184px;
+}
+
+.cablecar-icon {
+  background-position: 0px -480px;
+}
+
+.up-stairs-icon {
+  background-position: 0px -864px;
+}
+
+.down-stairs-icon {
+  background-position: 0px -896px;
+}
+
+.up-escalator-icon {
+  background-position: 0px -928px;
+}
+
+.down-escalator-icon {
+  background-position: 0px -960px;
+}
+
+.no-zone-1-icon {
+  background-position: 0px -992px;
+}
+
+.up-ramp-icon {
+  background-position: 0px -1024px;
+}
+
+.down-ramp-icon {
+  background-position: -32px -1024px;
+}
+
+.up-lift-icon {
+  background-position: -64px -1024px;
+}
+
+.down-lift-icon {
+  background-position: -64px -896px;
+}
+
+.accessible-icon {
+  background-position: -64px -992px;
+}
+
+.inverse-accessible-icon {
+  background-position: -32px -992px;
+}
+
+.pushchair-icon {
+  background-position: -32px -896px;
+}
+
+.luggage-icon {
+  background-position: -32px -960px;
+}
+
+.elderly-icon {
+  background-position: -32px -928px;
+}
+
+.disabled-icon {
+  background-position: -64px -928px;
+}
+
+.headphones-icon {
+  background-position: -64px -960px;
+}
+
+.family-icon {
+  background-position: -32px -864px;
+}

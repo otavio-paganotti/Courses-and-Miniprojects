@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Injecting SVG With JavaScript - Customisation</title>
+  
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align:center;
+  background: #1e2629;
+  overflow:hidden;
+}
+.svg-icons {
+  width:100px;
+  height:100px;
+  display:inline-block;
+  cursor:pointer;
+  margin:20px 20px;
+  position:relative;
+}
+svg {
+  width:100%;
+  height:100%;
+  transition:.5s ease;
+  transform-origin: 42px 50px;
+}
+svg path {
+ fill:#ea5c35;
+ transition:.5s ease;
+}
+.svg-icons:after {
+  content:"I'm active";
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  opacity:0;
+  transition:.5s ease;
+}
+.svg-icons.active:after {
+  content:"I'm active";
+  opacity:1;
+  position:absolute;
+  left:10px;
+  bottom:-20px;
+  color:#fff;
+}
+.svg-icons.active svg {
+  transform:rotateY(180deg);
+}
+.svg-icons.active svg path {
+ fill:#fff;
+}
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <span class="svg-icons icon1"></span>
+<span class="svg-icons icon2"></span>
+<span class="svg-icons icon3"></span>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

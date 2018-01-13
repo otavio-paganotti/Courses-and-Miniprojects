@@ -1,0 +1,14 @@
+body, html{
+  height:100%;
+  background:#666;
+  width:100%;
+  overflow:hidden;
+}
+
+svg{
+  height:104px;
+  width:104px;
+  position:absolute;
+  left:50%;
+  top:50%;
+}

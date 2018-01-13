@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Search...</title>
+  <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='css/7534eb3fb62294822de9eace9.css'>
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      body {
+  color: #b3c33a;
+  background-color: #333;
+}
+
+.search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -54px;
+  width: 600px;
+}
+
+svg {
+  position: absolute;
+  transform: translateX(-246px);
+  width: 600px;
+  height: auto;
+  stroke-width: 8px;
+  stroke: #b3c33a;
+  stroke-width: 1px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 64.6 206.305;
+  transition: all 0.5s ease-in-out;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.input-search {
+  position: absolute;
+  width: calc(100% - 148px);
+  height: 64px;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  left: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 20px;
+  font-size: 50px;
+}
+
+.search-label {
+  position: absolute;
+  display: block;
+  width: 108px;
+  height: 108px;
+  top: 0;
+  left: 50%;
+  margin-left: -54px;
+  z-index: 100;
+  transition: 0.5s ease-in-out;
+}
+
+.isActive .search-label {
+  transform: translateX(246px);
+}
+.isActive svg {
+  stroke-dashoffset: -65;
+  stroke-dasharray: 141.305 66;
+  transform: translateX(0);
+}
+.isActive.full svg {
+  stroke-dashoffset: -65;
+  stroke-dasharray: 141.305 66;
+  transform: translateX(0);
+}
+
+.full .search-label {
+  transform: translateX(246px);
+}
+.full svg {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 64.6 206.305;
+  transform: translateX(0);
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="search">
+    <svg version="1.1" viewBox="0 0 142.358 24.582">
+    <path id="search-path" fill="none" d="M131.597,14.529c-1.487,1.487-3.542,2.407-5.811,2.407
+        c-4.539,0-8.218-3.679-8.218-8.218s3.679-8.218,8.218-8.218c4.539,0,8.218,3.679,8.218,8.218
+        C134.004,10.987,133.084,13.042,131.597,14.529c0,0,9.554,9.554,9.554,9.554H0"/>
+    </svg>
+    <label for="search" class="search-label"></label>
+    <input type="search" id="search" autocomplete="off" class="input-search"/>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/15979/footer-inject.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
